@@ -1,0 +1,89 @@
+/* Side Navigation */
+
+.SideNav {
+  width: 40vh;
+  height: auto;
+  min-height: 100vh;
+  background-color: #0f0f0f;
+  box-sizing: border-box;
+  color: white;
+  margin-right: 30px;
+}
+
+.Logo {
+  margin: 40px;
+  margin-left: 8vh;
+  font-size: 27px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.menu-items {
+  display: flex;
+  width: 30vh;
+  height: 6vh;
+  color: rgb(93, 91, 91);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 7vh;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.menu-items:hover {
+  color: white;
+  background-color: #272727;
+  border-radius: 5px;
+}
+
+.menu-items .Link:hover {
+  color: white;
+}
+
+.Link {
+  display: flex;
+  align-items: center;
+  width: 30vh;
+  height: 6vh;
+  text-decoration: none;
+  color: rgb(93, 91, 91);
+  margin-left: 20px;
+}
+
+.active {
+  color: white;
+  border-radius: 5px;
+  background-color: #272727;
+  width: 30vh;
+}
+
+.active .Link {
+  color: white;
+}
+
+.divider {
+  width: 35vh;
+  margin-left: 15px;
+  margin-top: 40px;
+  border: 1px solid #3e3e3e;
+}
+
+.GetInTouch {
+  margin-top: 1vh;
+  text-decoration: none;
+  list-style: none;
+}
+
+.GetInTouch li {
+  margin-top: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(93, 91, 91);
+  cursor: pointer;
+}

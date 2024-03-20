@@ -38,8 +38,8 @@ app.post('/register', async (req, res) => {
 })
 
 app.post('/login', async (req, res) => {
-    const JWT_SECRET = "secret"; 
-    
+    const JWT_SECRET = "secret";
+
     try {
         const { username, password } = req.body;
 
@@ -72,6 +72,17 @@ app.post('/login', async (req, res) => {
         });
     }
 });
+
+
+app.get("/profile", (req, res) => {
+    const { token } = req.cookies
+    if (token) {
+        jwt.verify(token, JWT_SECRET, {}, (err, user) => {
+            if (err) throw err;
+            res.json(user)
+        })
+    }
+})
 app.listen(PORT, () => {
     console.log("Listening...")
 })

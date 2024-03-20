@@ -1,0 +1,76 @@
+.Container {
+  width: 40vh;
+  height: 30vh;
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.head {
+  display: flex;
+  height: 30vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card Banner */
+
+.bannerContainer {
+  width: 140vh;
+  height: 30vh;
+  margin-left: 5vh;
+  margin-top: 3vh;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+/* Faculty Card */
+
+.FacultyCard {
+  display: flex;
+  width: 139vh;
+  list-style: none;
+  border-bottom: 1px solid #bebebe;
+}
+
+.FacultyCardDetails {
+  display: flex;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 10px;
+  margin-left: 30px;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.FacultyCard:hover {
+  background-color: #f5f5f5;
+}
+
+.FacultyCard:hover .Edit {
+  visibility: visible;
+  transition: 0.1s;
+}
+
+.userProfile {
+  height: 25px;
+  width: 30px;
+}
+
+.FacultyName {
+  margin-left: 7vh;
+}
+.AssignedTo {
+  margin-left: 20vh;
+}
+.DOA {
+  margin-left: 25vh;
+}
+
+.Edit {
+  visibility: hidden;
+  height: 18px;
+  width: 18px;
+  margin-left: 10vh;
+}

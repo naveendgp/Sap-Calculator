@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  background-color: #f7f8fc;
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
+}
+
+/* Home Page */
+.Head {
+  display: flex;
+  align-items: center;
+  margin-top: 5vh;
+  width: 165vh;
+  height: 10vh;
+}
+
+.title {
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.profile {
+  margin-left: 135vh;
+}
+
+.profile h4 {
+  font-size: 17px;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+.Department {
+  margin-top: 10vh;
+  margin-left: 2vh;
+}
+
+.Dep-Grid {
+  display: grid;
+  grid-template-columns: 50vh 50vh 50vh;
+}
+
+/* Add Faculty */
+
+.add-faculty {
+  width: 150vh;
+  height: auto;
+  border: 1px solid #bebebe;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+  transition: 1s;
+  margin-top: 10vh;
+  margin-left: 5vh;
+}
+
+.faculty-name {
+  margin-top: 7vh;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.InputField {
+  width: 35vh;
+  padding: 13px;
+  border-radius: 5px;
+  background-color: #eeecec;
+  margin-left: 15px;
+  border: 1px solid #bebebe;
+  outline: none;
+}
+
+.InputField:focus {
+  border: 1px solid #bebebe;
+  outline: none;
+}
+
+.InputField:hover {
+  outline: none;
+  border: 1px solid #bebebe;
+}
+
+.dropdown {
+  width: 35vh;
+  padding: 13px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #bebebe;
+  background-color: #eeecec;
+}
+
+.dropdown-menu {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.dropdown-menu li {
+  width: 35vh;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 37vh;
+  margin-top: 5vh;
+  margin-left: 83vh;
+  margin-bottom: 30px;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.75;
+}
+
+/* Login */
+
+.Login {
+  display: flex;
+  width: 120vh;
+  height: 70vh;
+  margin-top: 15vh;
+  margin-left: 40vh;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid #bebebe;
+}
+
+.Fields {
+  margin-left: 40vh;
+  margin-top: 10vh;
+}
+
+.login-btn {
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 37vh;
+  margin-top: 5vh;
+  margin-left: 3vh;
+}

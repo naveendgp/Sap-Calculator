@@ -1,5 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
 
 const Login = () => {
@@ -31,6 +35,7 @@ const Login = () => {
       console.log(response);
       if (response) {
         console.log(response);
+        navigate("/");
       }
     } catch (err) {
       console.log(err);
@@ -38,30 +43,78 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h3>Login In</h3>
-      {success ? (
-        <h3>You're Successfully Logged In!</h3>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="username">UserName</label>
+    // <div>
+    //   <h3>Login In</h3>
+    //   {success ? (
+    //     <h3>You're Successfully Logged In!</h3>
+    //   ) : (
+    //     <form onSubmit={handleSubmit}>
+    //       <label htmlFor="username">UserName</label>
+    //       <input
+    //         type="text"
+    //         id="username"
+    //         ref={userRef}
+    //         onChange={(e) => setUsername(e.target.value)}
+    //       />
+
+    //       <label htmlFor="password">Password</label>
+    //       <input
+    //         type="password"
+    //         id="password"
+    //         onChange={(e) => setPassword(e.target.value)}
+    //       />
+
+    //       <h3>Successfully Logged In!</h3>
+
+    //       <button>Login</button>
+    //     </form>
+    //   )}
+    // </div>
+
+    <div className="Login">
+      <div></div>
+
+      <div className="Fields">
+        <h3 style={{ marginLeft: "34vh", fontSize: "30px" }}>Login</h3>
+        <div style={{ marginLeft: "20vh" }}>
+          <h4 className="faculty-name">
+            <span>
+              <FontAwesomeIcon icon={faUser} style={{ marginLeft: "10px" }} />
+            </span>{" "}
+            UserName
+          </h4>
           <input
-            type="text"
-            id="username"
+            type="Text"
+            className="InputField"
+            placeHolder="Enter Username here.."
             ref={userRef}
             onChange={(e) => setUsername(e.target.value)}
           />
+        </div>
 
-          <label htmlFor="password">Password</label>
+        <div style={{ marginLeft: "20vh" }}>
+          <h4 className="faculty-name">
+            <span>
+              <FontAwesomeIcon icon={faLock} style={{ marginLeft: "10px" }} />
+            </span>{" "}
+            Password
+          </h4>
           <input
             type="password"
-            id="password"
+            className="InputField"
+            placeHolder="Enter Password here.."
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button>Login</button>
-        </form>
-      )}
+          <button
+            className="login-btn"
+            style={{ marginRight: "50vh" }}
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

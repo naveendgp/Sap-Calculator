@@ -1,0 +1,37 @@
+.Faculty-container {
+  width: 137vh;
+  margin-left: 5vh;
+  margin-top: 5vh;
+  border-radius: 10px;
+}
+
+.Table-head {
+  display: flex;
+  width: 136vh;
+  list-style: none;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #bebebe;
+  background-color: white;
+}
+
+.Table-details {
+  width: 139vh;
+  height: 50vh;
+  margin-top: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  background-color: white;
+  border: 1px solid #bebebe;
+}
+
+.facultyName {
+  margin-left: 20vh;
+}
+.assignedTo {
+  margin-left: 23vh;
+}
+.dOA {
+  margin-left: 17vh;
+}
