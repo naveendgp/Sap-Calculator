@@ -1,10 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import SideNav from "../Components/SideNavigation/SideNav";
+import SideNav from "../../Components/SideNavigation/SideNav";
+import axios from "axios";
+
 const AddFaculty = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [allocatedDep, setDep] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -12,7 +20,26 @@ const AddFaculty = () => {
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
-    setIsOpen(false); // Close the dropdown after selecting an option
+    setIsOpen(false);
+    setDep(option);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const role = "Faculty";
+    try {
+      const response = await axios.post("http://localhost:8000/register", {
+        name,
+        password,
+        phoneNumber,
+        allocatedDep,
+        email,
+        role,
+      });
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -20,7 +47,7 @@ const AddFaculty = () => {
       <SideNav />
       <div>
         <div className="Head">
-          <h3 className="title">Add Faculty</h3>
+          <h3 className="title">Add Faculty </h3>
         </div>
         <section className="add-faculty">
           <div style={{ display: "flex" }}>
@@ -30,6 +57,7 @@ const AddFaculty = () => {
                 type="Text"
                 className="InputField"
                 placeHolder="Enter Name here.."
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -39,6 +67,7 @@ const AddFaculty = () => {
                 type="Text"
                 className="InputField"
                 placeHolder="Enter Email here.."
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
@@ -59,6 +88,7 @@ const AddFaculty = () => {
                 type="password"
                 className="InputField"
                 placeHolder="Enter Confirm password here.."
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
@@ -70,36 +100,46 @@ const AddFaculty = () => {
                 type="text"
                 className="InputField"
                 placeHolder="Enter Phone number here.."
+                onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
             <div style={{ marginLeft: "22vh", marginTop: "7vh" }}>
               <h4>Allocate Department</h4>
               <div className="dropdown" onClick={toggleDropdown}>
-                <span
-                  style={{
-                    flex: "0",
-                    width: "10vh",
-                  }}
-                >
-                  {selectedOption ? (
-                    <p>{selectedOption}</p>
-                  ) : (
-                    "Select an option"
-                  )}
-                </span>
-                <span style={{ marginLeft: "14vh" }}>
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </span>
+                <div style={{ display: "flex" }}>
+                  <div className="selected-option">
+                    {selectedOption ? (
+                      <p>{selectedOption}</p>
+                    ) : (
+                      "Select an option"
+                    )}
+                  </div>
+                  <div className="drop-icon">
+                    <FontAwesomeIcon icon={faChevronDown} />
+                  </div>
+                </div>
                 {isOpen && (
                   <div className="dropdown-menu">
                     <ul>
-                      <li onClick={() => handleOptionSelect("Option 1")}>
+                      <li
+                        onClick={() => {
+                          handleOptionSelect("AIML");
+                        }}
+                      >
                         AIML
                       </li>
-                      <li onClick={() => handleOptionSelect("Option 2")}>
+                      <li
+                        onClick={() => {
+                          handleOptionSelect("AIDS");
+                        }}
+                      >
                         AIDS
                       </li>
-                      <li onClick={() => handleOptionSelect("Option 3")}>
+                      <li
+                        onClick={() => {
+                          handleOptionSelect("CSE");
+                        }}
+                      >
                         CSE
                       </li>
                     </ul>
@@ -109,7 +149,9 @@ const AddFaculty = () => {
             </div>
           </div>
 
-          <button className="btn">Add Faculty</button>
+          <button className="btn" onClick={handleSubmit}>
+            Add Faculty
+          </button>
         </section>
       </div>
     </div>

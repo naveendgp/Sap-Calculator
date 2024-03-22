@@ -35,7 +35,11 @@ const Login = () => {
       console.log(response);
       if (response) {
         console.log(response);
-        navigate("/");
+        if (response.data.user.role == "admin") {
+          navigate("/");
+        } else {
+          navigate("/faculty-home");
+        }
       }
     } catch (err) {
       console.log(err);
@@ -43,34 +47,6 @@ const Login = () => {
   };
 
   return (
-    // <div>
-    //   <h3>Login In</h3>
-    //   {success ? (
-    //     <h3>You're Successfully Logged In!</h3>
-    //   ) : (
-    //     <form onSubmit={handleSubmit}>
-    //       <label htmlFor="username">UserName</label>
-    //       <input
-    //         type="text"
-    //         id="username"
-    //         ref={userRef}
-    //         onChange={(e) => setUsername(e.target.value)}
-    //       />
-
-    //       <label htmlFor="password">Password</label>
-    //       <input
-    //         type="password"
-    //         id="password"
-    //         onChange={(e) => setPassword(e.target.value)}
-    //       />
-
-    //       <h3>Successfully Logged In!</h3>
-
-    //       <button>Login</button>
-    //     </form>
-    //   )}
-    // </div>
-
     <div className="Login">
       <div></div>
 

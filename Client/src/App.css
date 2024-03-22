@@ -94,6 +94,10 @@
   background-color: #eeecec;
 }
 
+.selected-option {
+  width: 30vh;
+}
+
 .dropdown-menu {
   margin-top: 20px;
   list-style: none;
@@ -102,6 +106,7 @@
 .dropdown-menu li {
   width: 35vh;
   list-style: none;
+  cursor: pointer;
   margin-bottom: 10px;
 }
 

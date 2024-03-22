@@ -3,12 +3,12 @@ import FacultyCard from "../Card/FacultyCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const FacultyDetails = () => {
+const StudentDetails = () => {
   const [Faculty, setFaculty] = useState([]);
 
-  const GetallFaculty = async () => {
+  const GetAllStudents = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/getFaculty");
+      const response = await axios.get("http://localhost:8000/getStudent");
       console.log(response.data);
       setFaculty(response.data);
     } catch (error) {
@@ -17,14 +17,14 @@ const FacultyDetails = () => {
   };
 
   useEffect(() => {
-    GetallFaculty();
+    GetAllStudents();
   }, []);
 
   return (
     <div className="Faculty-container">
       <div className="Table-head">
         <li className="facultyName">Name</li>
-        <li className="assignedTo">Assigned To</li>
+        <li className="assignedTo">Department</li>
         <li className="dOA">Email</li>
       </div>
       <div className="Table-details">
@@ -40,4 +40,4 @@ const FacultyDetails = () => {
   );
 };
 
-export default FacultyDetails;
+export default StudentDetails;

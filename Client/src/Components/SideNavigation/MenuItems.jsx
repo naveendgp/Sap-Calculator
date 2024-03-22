@@ -11,4 +11,12 @@ export const MenuItems = [
     title: "Add Faculty",
     path: "/add-faculty",
   },
+  {
+    title: "Add Student",
+    path: "/add-student",
+  },
+  {
+    title: "Profile",
+    path: "/faculty-add-student",
+  },
 ];
