@@ -4,7 +4,6 @@ const Student = require('../Model/Student');
 
 router.get('/faculty/students', async (req, res) => {
     const { allocatedDep } = req.query; // Access parameters from query string
-    console.log(allocatedDep)
 
     try {
         const response = await Student.find({ allocatedDep: { $in: allocatedDep } });

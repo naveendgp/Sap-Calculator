@@ -8,18 +8,39 @@ import {
 
 import { faEdit } from "@fortawesome/free-regular-svg-icons";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
 const StudentCard = ({ name, dep, id }) => {
-  const deleteStudent = async (name) => {
+
+  const [count,setCount] = useState(0)
+
+  const getStudent = async () => {
     try {
-      const response = await axios.delete(
-        `http://localhost:8000/deleteStudent?name=${encodeURIComponent(name)}`
-      );
+      const response = await axios.get(
+        `http://localhost:8000/getStudent}`);
       console.log(response);
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    getStudent()
+  },[count])
+
+  const deleteStudent = async (name) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8000/deleteStudent?name=${encodeURIComponent(name)}`
+      );
+      console.log(response);
+      setCount(count+1)
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  console.log(count)
   return (
     <div className="FacultyCard">
       <ul className="FacultyCardDetails">
